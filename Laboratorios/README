@@ -1,0 +1,55 @@
+Laboratórios realizados para a matéria ELF74 em 2023.1
+
+Lab 1:
+Utilizar interrupções para ler botões e alterar estado dos Leds do kit.
+O jogo desse ser inicializado apresentando um estados de todos os LEDs acesos
+Quando os LEDs apagarem o jogador terá um tempo para precissionar um botão
+Caso seja feito dentro do tempo os LEDs 1 e 2 acendem 
+Caso não, os LEDs 3 e 4 acendem
+
+###############################################################################################################################################
+
+Lab 2:
+Controlar via UART os 4 LEDs do kit para simular motores de passo.
+• Mensagem: número da saída, número de passos e direção
+• A taxa de comunicação deve ser de 115200 bps no formato 8N1.
+• Os leds (1-4) piscam na forma:
+• Direção “horária”: 2x para cada passo
+• Direção “anti-horária”: 1x para cada passo
+• Considerar para o projeto, o módulo driver com o A4988 para acionamento (usar terminais da GPIO)
+• Especificar, projetar e construir
+
+###############################################################################################################################################
+
+Lab 3:
+Controle de LEDs com Threads
+O objetivo deste exercício é usar threads para controlar o acendimento de LEDs em padrões diferentes. A
+equipe deve criar um projeto no Keil uVision ou IAR que implemente o seguinte:
+A. Thread 1: Controla um LED para acender e apagar a cada segundo.
+B. Thread 2: Controla outro LED para piscar duas vezes por segundo.
+C. Thread 3: Controla um terceiro LED que pisca a cada meio segundo.
+
+Lembre-se
+1. Inicialize o RTOS
+2. Crie as threads
+3. Inicialize os GPIOs para os LEDs
+4. Inicie o escalonador do RTOS
+
+###############################################################################################################################################
+
+Lab 4:
+Leitura de sensores com Threads
+
+Neste exercício, o objetivo é usar threads para ler e processar dados de diferentes sensores. A equipe deve criar um projeto
+que implemente o seguinte:
+
+• Thread 1: Lê os dados de um sensor de temperatura LM35 a cada 1 segundo e armazena a leitura em uma variável global.
+• Thread 2: Lê os dados de um sensor de luminosidade (LDR) a cada 3 segundos e armazena a leitura em uma variável
+global.
+• Thread 3: A cada segundo, lê as variáveis globais e imprime os dados de todos os sensores na UART.
+
+Lembre-se, a implementação correta de threads envolve considerações de segurança para evitar condições de corrida, então
+é uma boa prática usar mutexes ou semáforos para proteger o acesso a recursos compartilhados, como as variáveis globais
+neste caso.
+
+Aqui foram simulados valores utilizando uma função que retornava valores "aleatórios"
