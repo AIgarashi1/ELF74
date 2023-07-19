@@ -1,5 +1,7 @@
 Laboratórios realizados para a matéria ELF74 em 2023.1
 
+Todos os laboratórios foram implementados utilizadondo o Keil uVision V6
+
 Lab 1:
 Utilizar interrupções para ler botões e alterar estado dos Leds do kit.
 O jogo desse ser inicializado apresentando um estados de todos os LEDs acesos
@@ -35,6 +37,8 @@ Lembre-se
 3. Inicialize os GPIOs para os LEDs
 4. Inicie o escalonador do RTOS
 
+Foi utilizados o CMSIS V2 como RTOS
+
 ###############################################################################################################################################
 
 Lab 4:
@@ -53,3 +57,5 @@ Lembre-se, a implementação correta de threads envolve considerações de segur
 neste caso.
 
 Aqui foram simulados valores utilizando uma função que retornava valores "aleatórios"
+
+Foi utilizados o CMSIS V2 como RTOS
