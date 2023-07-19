@@ -1,0 +1,20 @@
+Projeto de controle do simuladore de elevador para a disciplina ELF74 em 2023.1
+
+Requisitos de projeto:
+  O SW deve utilizar RTOS e pelo menos 3 threads
+
+Solução:
+  Foi escolhido o CMSIS V2 como RTOS.
+  4 threads controlam o conjunto: 
+    1 de leitura de dados enviados do simulador para a TIVA.
+    3 threads para processar dados de comando e estado recebidos para cada elevador e gerar uma resposta ao simulador
+  Mutex foi utilizado para limitar acesso a UART.
+  3 QUEUEs distintas foram utilizadas:
+  Para armazenar comandos e estados enviados pelo simulador.
+  Para armazenar comandos que estão sendo processados pela TIVA.
+  Para armazenar comandos prontos a serem enviados ao simulador.
+
+Possiveis melhorias:
+  O comando de movimentação do elevador ocorre após alguns segundos do comando de fechar portas,
+  poderia ser esperado o estado de portas fechadas para realizar a ação.
+  As chamadas dos elevadores são respondidas em ordem de chegada, poderia ser utilizado um método de seleção de andares mais otimizadas.
